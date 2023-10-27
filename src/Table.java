@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
-public class Table {
+public class Table implements Billable {
 
     private Integer width = 20;
     private Integer length = 10;
     private ArrayList<Leg> legs = new ArrayList<>();
+
+    private Float price;
 
     public Table(Integer numLegs) {
         for(int i = 0; i < numLegs; i++) {
@@ -14,5 +16,10 @@ public class Table {
 
     public int countLegs(){
         return legs.size();
+    }
+
+    @Override
+    public Float getPrice() {
+        return this.price;
     }
 }
